@@ -1,0 +1,61 @@
+{
+  "name": "solidscript",
+  "version": "1.0.0-alpha",
+  "description": "A language for creating solid geometry",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamhaymc/SolidScript.git"
+  },
+  "author": {
+    "name": "iamhaymc"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "type": "module",
+  "main": "./out/solidscript.esm.min.js",
+  "types": "./out/solidscript.d.ts",
+  "bin": {
+    "solids": "./out/solidscript-cli.js"
+  },
+  "devDependencies": {
+    "@jscad/json-deserializer": "^2.0.32",
+    "@jscad/json-serializer": "^2.0.31",
+    "@jscad/modeling": "^2.12.6",
+    "@jscad/obj-deserializer": "^2.0.31",
+    "@jscad/obj-serializer": "^2.1.21",
+    "@jscad/svg-deserializer": "^2.5.12",
+    "@jscad/svg-serializer": "^2.3.19",
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.3.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^24.10.1",
+    "d3": "^7.9.0",
+    "lodash": "^4.17.21",
+    "npm-run-all": "^4.1.5",
+    "rollup": "^4.53.3",
+    "rollup-plugin-dts": "^6.2.3",
+    "rollup-plugin-polyfill-node": "^0.13.0",
+    "rollup-plugin-prettier": "^4.1.2",
+    "tslib": "^2.8.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "axios": "^1.13.2",
+    "execa": "^9.6.0",
+    "fs-extra": "^11.3.2",
+    "globby": "^16.0.0",
+    "nconf": "^0.13.0"
+  },
+  "scripts": {
+    "build": "run-s build-lib build-cli",
+    "build-lib": "rollup --config ./rollup.mjs",
+    "build-cli": "tsc --project ./tsconfig-lib.json"
+  }
+}
